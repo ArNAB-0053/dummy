@@ -7,6 +7,9 @@ import os
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
+port = int(os.environ.get('PORT', 5000))
+python_version = os.environ.get('PYTHON_VERSION', '3.9.19')
+
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = {'pdf'}
@@ -85,5 +88,6 @@ def upload_resume():
         return jsonify({"message": "File uploaded successfully"}), 200
     else:
         return jsonify({"error": "File type not allowed"}), 400
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=port)
