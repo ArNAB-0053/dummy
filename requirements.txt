@@ -1,0 +1,6 @@
+pyresparser
+scikit-learn
+nltk
+Flask
+Flask-Cors
+Gunicorn
