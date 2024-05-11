@@ -85,6 +85,3 @@ def upload_resume():
         return jsonify({"message": "File uploaded successfully"}), 200
     else:
         return jsonify({"error": "File type not allowed"}), 400
-
-if __name__ == '__main__':
-    app.run(debug=True, port=3000)
